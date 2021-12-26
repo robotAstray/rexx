@@ -6,19 +6,9 @@ tries = 1
 do while (guess \= secret)
     say "What is your guess?"
     pull guess
-    if (guess \= secret & guess < 0) then
+    if (guess \= secret) then
     do
-        say "That's not it. Enter a number greater than 0. Try again"
-        tries = tries + 1
-    end
-    if (guess \= secret & guess > 10) then
-    do
-        say "That's not it. Enter a number smaller than 10. Try again"
-        tries = tries + 1
-    end
-    if (guess \= secret & DATATYPE(secret)==FLOAT) then
-    do
-        say "That's not it. Enter an integer between 1 and 10. Try again"
+        say "That's not it. Try again"
         tries = tries + 1
     end
 end
